@@ -1,12 +1,29 @@
 # python -m venv venv
-from flask import Flask,jsonify
+#venv\Scripts\activate
+
+from flask import Flask,jsonify, make_response, request
 from mock import Carros
 
 app = Flask(__name__)
+app.config['JSON_SORT_KEYS'] = False
 
 @app.route('/carros', methods=['GET'])
 def get_carros():
-    return Carros
+
+    return make_response(
+
+        jsonify(
+        message='lista carros',
+        data=Carros)
+    )
+
+
+@app.route('/carros', methods=['POST'])
+def create_carro():
+    carro = request.json
+    Carros.append(carro)
+    return  make_response(jsonify(carro)) 
+
 
 if __name__ == '__main__':
 

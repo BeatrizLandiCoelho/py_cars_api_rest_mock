@@ -28,4 +28,4 @@ def create_carro():
 if __name__ == '__main__':
 
     print("server read to go")
-    app.run(debug=True, port=8080)
+    app.run(port=8080)

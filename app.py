@@ -1,5 +1,7 @@
-# python -m venv venv
-#venv\Scripts\activate
+
+#python -m venv venv
+#venv\Scripts\activate 
+#pip install flask
 
 from flask import Flask,jsonify, make_response, request
 from mock import Carros
